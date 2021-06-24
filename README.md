@@ -12,7 +12,7 @@ The interface guides you
 
 ![gif](/gifs/create.gif)
 ![gif](/gifs/create2.gif)
-![gif](/gifs/create3.gif)
+![gif](/gifs/resume.gif)
 
 ## Accounting ideas 
 
