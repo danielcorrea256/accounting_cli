@@ -1,6 +1,7 @@
 import csv 
 
-DATA_FILE = "./register.csv"
+DATA_FILE = "lib/register.csv"
+CODES_FILE = "lib/codes.csv"
 
 
 def get_data():
@@ -58,6 +59,7 @@ def is_new_code(code):
 
 
 
+
 def sort_codes(data):
     """
     return: an array of dicts sorted by the attribute["code"]
@@ -83,14 +85,16 @@ def get_codes():
     return: an array of dicts [{"code": xxx, "description": xxx}, ...]
     """
     try:
-        with open("./codes.csv", mode="r") as csv_file:
+        with open(CODES_FILE, mode="r") as csv_file:
             csv_reader = csv.DictReader(csv_file)
+            print("ok")
             data = []
             for row in csv_reader:
                 data.append(row)
             return sort_codes(data)
     # IF THE FILE IS NOT IN THE RIGHT PATH OR IS DELETED, RETURN {}
     except FileNotFoundError:
+        print("Codes doesn't founded")
         return []
 
 
@@ -101,7 +105,7 @@ def write_codes(new_codes):
     Modify file ./codes.csv
     params: new_codes is an array of dicts [{"code": xxx, "description": xxx}, ...]
     """
-    with open("./codes.csv", mode="w") as csv_file:
+    with open(CODES_FILE, mode="w") as csv_file:
         new_codes = sort_codes(new_codes)
         writer = csv.DictWriter(csv_file, fieldnames = ["code", "description"])
         writer.writeheader()

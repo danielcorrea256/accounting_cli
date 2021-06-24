@@ -29,4 +29,5 @@ def main():
         services.delete_record()
     elif option == "6":
         services.create_balance_sheet()
-    
+
+main()
