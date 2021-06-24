@@ -87,7 +87,6 @@ def get_codes():
     try:
         with open(CODES_FILE, mode="r") as csv_file:
             csv_reader = csv.DictReader(csv_file)
-            print("ok")
             data = []
             for row in csv_reader:
                 data.append(row)

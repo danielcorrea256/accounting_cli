@@ -90,7 +90,10 @@ def monthly_resume(filter_code, delay=0):
 
 
 def today_resume(n, filter_code = ""):
-    return resume(datetime.now(), datetime.now(), filter_code)
+    today = datetime.now()
+    start_date = datetime(today.year, today.month, today.day)
+    end_date = datetime(today.year, today.month, today.day) + timedelta(1)
+    return resume(start_date, end_date, filter_code)
 
 
 
